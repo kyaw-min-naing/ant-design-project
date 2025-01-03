@@ -1,35 +1,13 @@
-import React, { useState } from "react";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./component/Navbar";
-import ProductPage from "./Pages/ProductPage";
-import Login from "./Pages/Login";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import AppRoutes from "./routes/AppRoutes";
 
 const App: React.FC = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
-    localStorage.getItem("isAuthenticated") === "true"
-  );
-
-  const handleLogin = () => {
-    setIsAuthenticated(true);
-    localStorage.setItem("isAuthenticated", "true");
-  };
-
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/login" element={<Login onLogin={handleLogin} />} />
-        <Route
-          path="/products"
-          element={isAuthenticated ? <ProductPage /> : <Navigate to="/login" />}
-        />
-      </Routes>
+      <AppRoutes />
     </Router>
   );
 };
