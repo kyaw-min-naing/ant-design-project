@@ -13,6 +13,8 @@ const HomePage: React.FC = () => {
       </div>
       <div className="home-para">
         <p>Consider the Product Page to see the produt lists.</p>
+      </div>
+      <div className="home-product-btn">
         <Button>
           <Link to="/products">ProductPage</Link>
         </Button>

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCartOutlined, HomeOutlined } from "@ant-design/icons";
 import { Badge } from "antd";
-import { useCartStore } from "../context/store";
+import { useCartStore } from "../context/cartStore";
 import "../styles/Navbar.css";
 
 const Navbar: React.FC = () => {
